@@ -1,0 +1,12 @@
+# The row this package needs, kept here as the canonical definition: it loads
+# the package's main entry as the host half (a plain Cordis plugin serving the
+# sound pack), and the `dsh.client` declaration makes the web app load its
+# ./client bundle as the browser half.
+#
+# NOT applied automatically: the package declares no `dsh.bundle`, so it is
+# installed as a plain dependency and no layer is composed from this file. Copy
+# these lines into the profile's own cordis.patch.yml to register the row.
+- insert:
+    - id: dsh-openpeon
+      name: "dsh-openpeon"
+      config: {}
